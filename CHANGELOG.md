@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.1 (2016-11-29)
+  - use the newest Bolt.Sips (v0.1.2)
+  
+
 ## initial release (2016-09-09)
   + Elixir 1.3
   + using the latest [Bolt.Sips](https://github.com/florinpatrascu/bolt_sips) driver for connecting to the Neo4j Bolt endpoint

@@ -3,7 +3,7 @@ defmodule MoviesElixirPhoenix.Mixfile do
 
   def project do
     [app: :movies_elixir_phoenix,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.3",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -34,9 +34,8 @@ defmodule MoviesElixirPhoenix.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:bolt_sips, "~> 0.1.1"},
+     {:bolt_sips, "~> 0.1.2"},
      # {:bolt_sips, path: "../bolt_sips"},
-     {:boltex, github: "florinpatrascu/boltex"},
      {:cowboy, "~> 1.0"}]
   end
 end

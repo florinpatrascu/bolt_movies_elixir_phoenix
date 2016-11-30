@@ -9,8 +9,7 @@ defmodule MoviesElixirPhoenix do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
-      supervisor(MoviesElixirPhoenix.Endpoint, []),
-      worker(Bolt.Sips, [Application.get_env(:bolt_sips, Bolt)])
+      supervisor(MoviesElixirPhoenix.Endpoint, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

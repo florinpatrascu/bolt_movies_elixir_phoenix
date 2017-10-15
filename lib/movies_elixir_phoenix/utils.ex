@@ -49,7 +49,7 @@ defmodule MoviesElixirPhoenix.Utils do
   end
 
   defp parse_nodes(graph) do
-    nodes = graph["p"].nodes
+    graph["p"].nodes
     |> Enum.map(fn(n) ->
         model = %{id: n.id, labels: n.labels}
         func = &Map.merge(model, &1)

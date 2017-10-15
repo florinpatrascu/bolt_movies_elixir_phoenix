@@ -17,6 +17,5 @@ erl_crash.dump
 /config/prod.secret.exs
 *.sublime-project
 *.sublime-workspace
-priv/
 .vscode
 .idea

@@ -19,7 +19,6 @@ These are the components of our Web Application:
 - the Neo4j Movie Database. Open the [Neo4j Browser](http://localhost:7474).
 Then install the Movies dataset with `:play movies`, click and hit the "Run" button.
 
-
 ## Install
 
     $ git clone https://github.com/florinpatrascu/bolt_movies_elixir_phoenix
@@ -53,7 +52,7 @@ Start the Phoenix server:
 
 Point your browser to: `http://localhost:4000`, and you'll see the following "welcome" screen:
 
-![](web/static/elixir_movies_demo.png)
+![](priv/static/elixir_movies_demo.png)
 
 Click on the movie names, to see the cast and the roles for each member of the crew. Or just search movies by typing in a partial name, i.e. `atlas`, `apollo`, and so on.
 

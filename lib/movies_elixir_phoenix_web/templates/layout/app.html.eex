@@ -115,7 +115,7 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
-<script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+<script src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
 
 <script type = "text/javascript" >
     $(function () {

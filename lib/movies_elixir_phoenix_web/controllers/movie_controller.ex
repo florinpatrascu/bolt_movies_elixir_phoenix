@@ -1,5 +1,5 @@
-defmodule MoviesElixirPhoenix.MovieController do
-  use MoviesElixirPhoenix.Web, :controller
+defmodule MoviesElixirPhoenixWeb.MovieController do
+  use MoviesElixirPhoenixWeb, :controller
 
   alias MoviesElixirPhoenix.Utils
   alias Bolt.Sips, as: Bolt
@@ -11,11 +11,10 @@ defmodule MoviesElixirPhoenix.MovieController do
          RETURN p
     """
 
-    data = Bolt.query!(Bolt.conn, cypher)
-    {nodes, relationships} = data |> Utils.nodes_and_relationships
+    data = Bolt.query!(Bolt.conn(), cypher)
+    {nodes, relationships} = data |> Utils.nodes_and_relationships()
 
-    render(conn, "search_by_title.json",
-        movie: Utils.movie_and_roles(nodes, relationships, title))
+    render(conn, "search_by_title.json", movie: Utils.movie_and_roles(nodes, relationships, title))
   end
 
   def search_by_title_containing(conn, %{"title" => title}) do
@@ -24,7 +23,7 @@ defmodule MoviesElixirPhoenix.MovieController do
       RETURN m as movie
     """
 
-    movies=Bolt.query!(Bolt.conn, cypher)
+    movies = Bolt.query!(Bolt.conn(), cypher)
     render(conn, "search_by_title_containing.json", movies: movies)
   end
 
@@ -35,8 +34,7 @@ defmodule MoviesElixirPhoenix.MovieController do
       LIMIT #{limit}
     """
 
-    data = Bolt.query!(Bolt.conn, cypher)
+    data = Bolt.query!(Bolt.conn(), cypher)
     render(conn, "graph.json", data: Utils.graph(data))
   end
-
 end

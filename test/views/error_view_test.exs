@@ -1,21 +1,15 @@
-defmodule MoviesElixirPhoenix.ErrorViewTest do
-  use MoviesElixirPhoenix.ConnCase, async: true
+defmodule MoviesElixirPhoenixWeb.ErrorViewTest do
+  use MoviesElixirPhoenixWeb.ConnCase, async: true
 
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(MoviesElixirPhoenix.ErrorView, "404.html", []) ==
-           "Page not found"
+    assert render_to_string(MoviesElixirPhoenixWeb.ErrorView, "404.html", []) == "Not Found"
   end
 
-  test "render 500.html" do
-    assert render_to_string(MoviesElixirPhoenix.ErrorView, "500.html", []) ==
-           "Server internal error"
-  end
-
-  test "render any other" do
-    assert render_to_string(MoviesElixirPhoenix.ErrorView, "505.html", []) ==
-           "Server internal error"
+  test "renders 500.html" do
+    assert render_to_string(MoviesElixirPhoenixWeb.ErrorView, "500.html", []) ==
+             "Internal Server Error"
   end
 end

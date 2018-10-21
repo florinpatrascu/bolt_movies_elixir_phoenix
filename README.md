@@ -1,8 +1,8 @@
-## The Movies Example Application
+# The Movies Example Application
 
 A very simple web application using [Neo4j](http://neo4j.com/developer/get-started/) with [Elixir](http://elixir-lang.org), [Phoenix](http://www.phoenixframework.org), and: [Bolt.Sips](https://github.com/florinpatrascu/bolt_sips); an Elixir driver for Neo4j's Bolt network protocol.
 
-### The Stack
+## The Stack
 
 These are the components of our Web Application:
 
@@ -15,7 +15,7 @@ These are the components of our Web Application:
 ### Prerequisites
 
 - [Elixir](http://elixir-lang.org) and  [Phoenix](http://www.phoenixframework.org)
-- a local (or remote) Neo4j graph database server. This demo will connect to a local Neo4j server instance, available at: `localhost`, with the Bolt protocol enabled on port: `7687` 
+- a local (or remote) Neo4j graph database server. This demo will connect to a local Neo4j server instance, available at: `localhost`, with the Bolt protocol enabled on port: `7687`
 - the Neo4j Movie Database. Open the [Neo4j Browser](http://localhost:7474).
 Then install the Movies dataset with `:play movies`, click and hit the "Run" button.
 
@@ -73,12 +73,10 @@ Oh, oh, and some HTTP REST **endpoints** too, of course :)
       http://localhost:4000/movies/graph?limit=100
 
 
-### Credits
+## Credits
 
 - using most of the UI from: [neo4j-examples/movies-java-spring-data-neo4j-4](https://github.com/neo4j-examples/movies-java-spring-data-neo4j-4). Thank you!
 
-### License
+## License
 
-**MIT**
-
-
+### MIT

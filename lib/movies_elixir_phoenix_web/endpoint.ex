@@ -1,20 +1,25 @@
-defmodule MoviesElixirPhoenix.Endpoint do
+defmodule MoviesElixirPhoenixWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :movies_elixir_phoenix
 
-  socket "/socket", MoviesElixirPhoenix.UserSocket
+  socket("/socket", MoviesElixirPhoenixWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+  )
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :movies_elixir_phoenix, gzip: false,
+    at: "/",
+    from: :movies_elixir_phoenix,
+    gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
-    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
+    socket("/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket)
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
@@ -25,7 +30,7 @@ defmodule MoviesElixirPhoenix.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
+    json_decoder: Phoenix.json_library()
 
   plug Plug.MethodOverride
   plug Plug.Head
@@ -36,7 +41,7 @@ defmodule MoviesElixirPhoenix.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_movies_elixir_phoenix_key",
-    signing_salt: "Z2tf5kLO"
+    signing_salt: "2CViTkkR"
 
-  plug MoviesElixirPhoenix.Router
+  plug MoviesElixirPhoenixWeb.Router
 end

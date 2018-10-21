@@ -1,3 +1,3 @@
-defmodule MoviesElixirPhoenix.LayoutViewTest do
-  use MoviesElixirPhoenix.ConnCase, async: true
+defmodule MoviesElixirPhoenixWeb.LayoutViewTest do
+  use MoviesElixirPhoenixWeb.ConnCase, async: true
 end

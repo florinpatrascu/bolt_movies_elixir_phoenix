@@ -39,7 +39,9 @@ config :bolt_sips, Bolt,
 
 If your server requires basic authentication, add this to your config file:
 
-  basic_auth: [username: "neo4j", password: "*********"],
+```elixir
+basic_auth: [username: "neo4j", password: "*********"]
+```
 
 more details and examples, here: [Bolt.Sips](https://github.com/florinpatrascu/bolt_sips)
 

@@ -37,13 +37,21 @@ config :bolt_sips, Bolt,
   max_overflow: 5
 ```
 
-If your server requires basic authentication, add this to your config file:
+If your server requires basic authentication, add/uncomment this in your config file:
 
 ```elixir
-basic_auth: [username: "neo4j", password: "*********"]
+basic_auth: [username: "neo4j", password: "*********"],
 ```
 
 more details and examples, here: [Bolt.Sips](https://github.com/florinpatrascu/bolt_sips)
+
+Note that to get Jason to work, this is added in the `movie_controller.ex`. You will not need this if you are going back to Poison.
+
+```elixir
+require Protocol
+Protocol.derive(Jason.Encoder, Bolt.Sips.Types.Node)
+Protocol.derive(Jason.Encoder, Bolt.Sips.Types.UnboundRelationship)
+```
 
 ### Run
 

@@ -5,7 +5,7 @@
 Dependencies update
 
 * match dependencies to a default Phoenix 1.4 project
-* Poison 4.0.1
+* replace Poison with Jason
 
 ## 0.3.1
 

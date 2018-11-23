@@ -37,7 +37,7 @@ defmodule MoviesElixirPhoenix.MixProject do
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
-      {:poison, "~> 4.0.1"},
+      {:jason, "~> 1.0"},
       {:bolt_sips, "~> 1.0.0-rc2"},
       {:plug_cowboy, "~> 2.0"}
     ]

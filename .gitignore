@@ -19,3 +19,4 @@ erl_crash.dump
 *.sublime-workspace
 .vscode
 .idea
+.elixir_ls

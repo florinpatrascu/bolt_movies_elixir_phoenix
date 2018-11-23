@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2
+
+Dependencies update
+
+* match dependencies to a default Phoenix 1.4 project
+* replace Poison with Jason
+
 ## 0.3.1
 
 Demo refactored for using the latest Phoenix web framework and the newest Bolt.Sips driver

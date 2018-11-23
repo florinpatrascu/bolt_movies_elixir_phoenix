@@ -1,3 +1,7 @@
+require Protocol
+Protocol.derive(Jason.Encoder, Bolt.Sips.Types.Node)
+Protocol.derive(Jason.Encoder, Bolt.Sips.Types.UnboundRelationship)
+
 defmodule MoviesElixirPhoenixWeb.MovieController do
   use MoviesElixirPhoenixWeb, :controller
 
@@ -14,7 +18,11 @@ defmodule MoviesElixirPhoenixWeb.MovieController do
     data = Bolt.query!(Bolt.conn(), cypher)
     {nodes, relationships} = data |> Utils.nodes_and_relationships()
 
-    render(conn, "search_by_title.json", movie: Utils.movie_and_roles(nodes, relationships, title))
+    render(
+      conn,
+      "search_by_title.json",
+      movie: Utils.movie_and_roles(nodes, relationships, title)
+    )
   end
 
   def search_by_title_containing(conn, %{"title" => title}) do

@@ -1,15 +1,12 @@
 defmodule MoviesElixirPhoenix.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   @moduledoc false
 
   use Application
 
   def start(_type, _args) do
-    import Supervisor.Spec
     # List all child processes to be supervised
     children = [
-      worker(Bolt.Sips, [Application.get_env(:bolt_sips, Bolt)]),
+      {Bolt.Sips, Application.get_env(:bolt_sips, Bolt)},
       MoviesElixirPhoenixWeb.Endpoint
     ]
 

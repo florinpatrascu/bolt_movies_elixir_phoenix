@@ -9,6 +9,7 @@ config :movies_elixir_phoenix, MoviesElixirPhoenixWeb.Endpoint,
 config :bolt_sips, Bolt,
   # default port considered to be: 7687
   url: 'localhost',
+  basic_auth: [username: "neo4j", password: "test"],
   pool_size: 5,
   max_overflow: 1,
   retry_linear_backoff: [delay: 150, factor: 2, tries: 3]

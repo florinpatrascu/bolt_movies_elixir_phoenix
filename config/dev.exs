@@ -15,7 +15,7 @@ config :movies_elixir_phoenix, MoviesElixirPhoenixWeb.Endpoint,
 
 config :bolt_sips, Bolt,
   hostname: 'localhost',
-  # basic_auth: [username: "neo4j", password: "*********"],
+  basic_auth: [username: "neo4j", password: "test"],
   port: 7687,
   pool_size: 10,
   max_overflow: 5
